@@ -1,5 +1,5 @@
 FROM docker.io/centos
-MAINTAINER Chris <chris@arraylabs.com>
+MAINTAINER Kyle <kyle@kylebutton.com
 RUN yum -y install wget tar
 
 RUN yum -y update
