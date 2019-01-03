@@ -3,7 +3,7 @@
 Docker image for the HDHomeRun Record DVR software.  Also includes Samba with required mounts.
 
 # Usage
-    docker run -d --net=host arraylabs/hdhomerun_dvr
+    docker run -d --net=host techbutton/hdhomerun_dvr:latest
 
 # Details
 
@@ -13,13 +13,13 @@ Docker image for the HDHomeRun Record DVR software.  Also includes Samba with re
 * By default the video will be stored within the container.  If you want the video to persist a container being detroyed, mount an external volume at /hdhomerun/video
 
 
-    docker run -d -v /video:/hdhomerun/video --net=host arraylabs/hdhomerun_dvr
+    docker run -d -v /data/recordedtv:/hdhomerun/video --net=host techbutton/hdhomerun_dvr
 
 
 * If you want to disable the included Samba server, pass an environment varialbe using -e named SAMBA with a value of "off" or "false".  This could be useful if you want to use a Samba server on the host, in another container, or use some other way to create the required network mount.  If you try to run a Samba server on the host and in the container, they will conflict.
 
 
-    docker run -d -e SAMBA=off --net=host arraylabs/hdhomerun_dvr
+    docker run -d -e SAMBA=off --net=host techbutton/hdhomerun_dvr
 
 
 
