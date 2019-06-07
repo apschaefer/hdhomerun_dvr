@@ -16,13 +16,6 @@ Docker image for the HDHomeRun Record DVR software.  Also includes Samba with re
     docker run -d -v /data/recordedtv:/hdhomerun/video --net=host apschaefer/hdhomerun_dvr
 
 
-* If you want to disable the included Samba server, pass an environment varialbe using -e named SAMBA with a value of "off" or "false".  This could be useful if you want to use a Samba server on the host, in another container, or use some other way to create the required network mount.  If you try to run a Samba server on the host and in the container, they will conflict.
-
-
-    docker run -d -e SAMBA=off --net=host apschaefer/hdhomerun_dvr
-
-
-
 # File/Directory Paths
 If you want to customize the configuration, you can create a new Docker layer with your config files.  Just replace the following files with your files.
 * smb.conf = /etc/samba/smb.conf
