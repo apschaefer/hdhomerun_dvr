@@ -10,7 +10,8 @@ RUN if [ ! -d /hdhomerun/bin ];then mkdir /hdhomerun/bin; fi
 ADD hdhomerun.conf /hdhomerun/etc/
 WORKDIR /hdhomerun/bin
 ADD hdhomerun_start.sh /hdhomerun/bin/
-RUN curl -O -L http://download.silicondust.com/hdhomerun/hdhomerun_record_linux_beta
+RUN curl -f -O -L http://download.silicondust.com/hdhomerun/hdhomerun_record_linux
+RUN curl -f -O -L http://download.silicondust.com/hdhomerun/hdhomerun_record_linux_beta
 RUN mv hdhomerun_record_linux_beta hdhomerun_record_linux
 
 RUN chmod +x hdhomerun_record_linux
